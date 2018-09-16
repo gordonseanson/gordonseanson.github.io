@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jensen - Robotic Arm by Sean Johnson</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+<!--
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+								</a>
+-->
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.html">Ipsum veroeros</a></li>
+							<li><a href="generic.html">Tempus etiam</a></li>
+							<li><a href="generic.html">Consequat dolor</a></li>
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Jensen</h1>
+							<span class="image main"><img src="images/jensen_wide.jpg" alt="" /></span>
+							<p>Jensen is a robotic arm built on the Arduino platform. The final build will have six Hitec hobby servo motors, all controlled using a custom Arduino library I wrote to give them fluid and precise motion.</p>
+							<p>I started the designing this project in the summer of 2018. One of my goals for the summer was to learn how to use CAD software, and what better way was there than to build something cool? I decided to use Onshpae, and I started learning and practicing by creating 3d models of the servos I wanted to use. From there I designed the robotic arm pieces, using the servo models as a reference. By the end of summer I had become fairly adept in the CAD software and I had also started assembling the 3d printed parts. </p>
+							<p>Since my Fall 2018 semester has started, I have a written a program that allows one to move the arm with their hands into various positions, "save" those positions, and then hit a "play" button to cycle through the positions they have saved. I modified each servo with a "feedback" wire from the potentiometer inside so I could encode and "save" each servo's angle. In playback mode, an integral controller moves each servo until they reach their saved angle. Additionally, a running average smoothes the signal that moves each servo.</p>
+							<p>I currently have the arm working with four of the six planned servos, and I am working on implementing the final two that will control the arm's grabber mechanism.</p>
+							<iframe src="https://drive.google.com/file/d/1GvwEIZgKZ9k9syFJpk6ATFnnuEx4UyUJ/preview" width="640" height="480"></iframe>
+							<p><a href="https://github.com/gordonseanson/Jensen">Jensen's code</a></p>
+							<p><a href="https://github.com/gordonseanson/enhancedServo">Enhanced Servo Library</a></p>
+						</div>
+					</div>
+
+				<!-- Footer -->
+<!--
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+-->
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

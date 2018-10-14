@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jazz Hand</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Sean's Projects</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Jazz Hand</h1>
+							<span class="image main"><img src="images/JazzHandwide.jpg" alt="" /></span>
+							<p>This is the Jazz Hand, designed by my friend Otto Benson and I for HackUmass VI. It is a wearable glove apparatus that gives users dynamic control over assignable MIDI parameters. One of the main ingredients are the flex sensors attached to each finger. Feel familiar? Flex sensors were popularized by the Nintendo PowerGlove back in 1989. That’s one of the influences for this design, in addition to electronic music performance art and science fiction. An accelerometer allows for control over expression and modulation in the z axis and x axis respectively. For our microcontroller we chose a teensy 3.1 for its ability to efficiently communicate MIDI information to a computer. The final design has the main components soldered to a perf board, all mounted inside a custom designed enclosure.</p>
+							<p>One of the challenges for this project was getting usable input from the sensors. Using a mix of debouncing and EWMA filtering, we got the note activation, expression, and modulation control to all work consistently. Additionally, making the the glove robust yet lightweight proved to be tricky. One unexpected thing that helped was the strap included on the glove. By running the LED and flex sensor wires underneath it, we made the glove less snag-prone and cable managment more bearable.</p>
+							<p>We were happy with what we made in the 36 hour constraint, but in the future we would like to implement more controllable parameters. We look forward to attending more hackathons.</p>
+							<span class="image main"><img src="images/jazzOpen.jpg" alt="" /></span>
+							<p><a href="https://github.com/seanjohnsonmakes/Jazz-Hand">Jazz Hand's code</a></p>
+							<p><a href="https://github.com/seanjohnsonmakes/PowerNote/tree/master">Power Note library</a></p>
+							<p><a href="https://soundcloud.com/user-241985400">Otto Benson soundcloud</a></p>
+						</div>
+					</div>
+
+				<!-- Footer -->
+<!--
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+-->
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

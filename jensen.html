@@ -53,7 +53,7 @@
 					<div id="main">
 						<div class="inner">
 							<h1>Jensen</h1>
-							<span class="image main"><img src="images/IMG_3098.JPG" alt="" /></span>
+							<p class = "image" align="middle"><img src="images/IMG_3098.JPG" alt="" width="80%" align="middle"></p>
 						  	<div style="text-align: center;">
 							<iframe src="https://drive.google.com/file/d/1szv5pqFUus7vwRSgNyKaIsiqFksHRZPS/preview" width="640" height="480"></iframe>
 							</div>
@@ -61,13 +61,13 @@
 							<p>Jensen is a robotic arm built on the Arduino platform with a focus on intuitive motion planning, done as a 1 credit independent project under mentorship from Charles B. Malloch, PhD. It can replicate a series of movements programmed by manually moving the arm. I got the inspiration to build it from seeing other robotic arms built in the UMass Amherst M5 makerspace. Furthermore, I wanted to learn how to use CAD software and I wanted to make an advanced Arduino project. I saw this as an opportunity to do all those things.</p>
 							
 							<h2><center>Original Design and Scope</center></h2>
-							<span class="image main"><img src="images/jensen_design.jpg" alt="" /></span>
+							<p class = "image" align="middle"><img src="images/jensen_design.jpg" alt="" width="80%" align="middle"></p>
 							<p>The CAD software I chose to learn for this project was OnShape, and the first thing I modeled was a HiTec HS-422 analog servo. I chose the servo because it was available to me locally and it was a reasonable price. It also served as good practice for learning OnShape before moving on to designing my own parts. At this early point in the project, I had general idea of what I wanted the arm to be capable of. I wanted it to have a decent range of motion and a gripper for picking things up. These general specifications informed the design as I continued modeling it in CAD. One other design constraint I had at this point was the size of the print bed on my 3D printer. That's why the base you see in the photo above is a relatively primitive square.</p>
 							<p>During this stage of the project, I was also brainstorming how I wanted to control the arm. One robotic arm I had been inspired by in the makerspace used a puppet arm for control. Another used an intuitive path programming method in which the arm was moved into various positions by the user. The arm would then cycle back through those positions.</p>
 							<p>My original plan was to finish the construction of the arm and then implement both of these control methods. I also wanted to make a computer application for controlling it at some point after that. As you can probably tell, I ended up reducing the scope of this aspect of the project. When I started working on those first two control methods, I quickly found that the intuitive path programming one was more complicated than I thought it would be. That's when I decided to make it my focus and put the other control methods on indefinite hold.</p>
 							
 							<h2><center>Control</center></h2>
-							<span class="image main"><img src="images/jensen_wide.jpg" alt=""/></span>
+							<p class = "image" align="middle"><img src="images/jensen_wide.jpg" alt="" width="80%" align="middle"></p>
 							<p>The method of control that I chose works like this: you move the arm with your hands into various positions and "save" those positions. Each position has information about the angle between each link of the arm. After you are done saving positions, you hit a playback button and the arm returns to each one of those positions in sequence.</p>
 							<p>In this control method, there were many things to figure out. In order for each servo to return to a saved angle, I had to somehow "save" those angles in the first place. This required the Arduino Uno I was using to be able to receive the current angle of each servo. My friend Jeremy Paradie, who made a robotic arm that uses this control method, clued me in to using the internal potentiometer of each hobby servo. This is the potentiometer that the servo uses itself to encode its angle. I chose a test servo, soldered a wire to the middle pin of the internal potentiometer, and drilled a hole in the enclosure to feed the wire outside.</p>
 							<p>I could now receive the current angle by reading the voltage on the middle pin of the potentiometer. However, there were two new problems. Firstly, there was noise in the form of voltage spikes on the signal coming from the middle pin. This problem became a real issue later. Secondly, the range of values for sending an angle and receiving an angle were different.</p>
@@ -77,7 +77,7 @@
 							<p>I solved the problem of overly quick acceleration by putting an exponentially weighted moving average (EWMA) filter on the output. By averaging the output, the big spikes in motion were reduced (including the jitter from the noise). However, the noise on the input signal was still a problem, so the next stage of my project was trying to solve that.</p>
 							
 							<h2><center>Noise</center></h2>
-							<span class="image main"><img src="images/noise.png" alt=""></span>
+							<p class = "image" align="middle"><img src="images/noise.png" alt="" width="65%" align="middle"></p>
 							<p><i>Pictured above:</i></p>
 							<p><i>In red: input signal<p></p> In blue: signal after processing</i></p>
 							<p>The first step in reducing the noise on the input signal was understanding its cause. Probing the signal on an oscilloscope revealed that the voltage spikes were happening at a rate of 50Hz. I happened to know that the PWM signal being sent to the servos was also at a rate of 50Hz, so I guessed the voltage spikes had something to do with that. I hypothesized that the movement of the servos was somehow causing voltage spikes on the V+ pin of the potentiometers, which in turn was messing up the reading on the middle pin.</p>
@@ -87,7 +87,7 @@
 							<p>My mentor, Dr. Malloch, helped me debug all of this and suggested I also measure the voltage on the middle pin relative to the other pins. That is what I did for my third and final attempt at reducing the noise of the angle input. I opened up each servo, reattached the wire I had snipped, and added a third wire coming from the reference pin on the potentiometer. In my code, I made the angle input equivalent to the following expression: (middle pin - reference pin) / (V+pin - reference pin). I tested it and it successfully reduced the effects of the voltage spikes. In addition, I also put an EWMA filter on this input. This processed signal and the original signal are pictured above.</p>
 							
 							<h2><center>Wrapping Things Up</center></h2>
-							<span class="image main"><img src="images/coolassarm.png" alt=""></span>
+							<p class = "image" align="middle"><img src="images/coolassarm.png" alt="" width="75%" align="middle"></p>
 							<p>With the noise problem solved to the best of my abilities, I set about fixing and making the final parts of the design. The arm was putting too much weight on the servo in the base, so I made a new base that supports the weight of the arm using a large bearing. I also printed the gripper and did a bit of sanding on it to get it working.</p>
 							<p>I am very pleased with the final result. The intuitive motion planning works consistently and the movement is smooth and accurate, considering everything. If someone else wanted to make this project, I would first strongly encourage them to make a simpler version of it. In hindsight, making something like this using hobby servo motors was very naive, and the difficulty I had getting it working goes to show that. I consider it a miracle that the arm works as well as it does. I still want to make a robotic arm that can interface with a computer, run more complex programs, and move with greater precision, so for my next project I'll do that. I'll use high quality digital robotics servos, and hopefully that will let me avoid many of the problems I encountered in this project.</p>
 							
